@@ -16,7 +16,7 @@ In order to run the application, from your git bash terminal run:
 
 ~~~ bash
 python lbg.py
-API Listening on http://localhost:8080
+API Listening on http://localhost:8080/index.html
 ~~~
 
 ## Stopping the application
