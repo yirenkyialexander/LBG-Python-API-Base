@@ -1,17 +1,11 @@
 FROM python:latest
 
-RUN pip install Flask
-RUN pip install Flask-API
-RUN pip install sqlalchemy
-RUN pip install Flask-SQLAlchemy
-RUN pip install selenium
-RUN pip install behave
-RUN pip install requests
-RUN pip install pyhamcrest
+WORKDIR /app
 
-# COPY lbg.py .
 COPY . .
-# COPY models.py .
+
+RUN pip install -r "requirements.txt"
+
 EXPOSE 8080
 
 ENTRYPOINT ["python", "lbg.py"]
