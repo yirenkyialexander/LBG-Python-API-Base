@@ -12,6 +12,6 @@ RUN pip install pyhamcrest
 # COPY lbg.py .
 COPY . .
 # COPY models.py .
-EXPOSE 8081
+EXPOSE 8080
 
 ENTRYPOINT ["python", "lbg.py"]
