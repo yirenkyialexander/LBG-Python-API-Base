@@ -1,8 +1,6 @@
 """
 LBG learning-oriented CRUD-based RESTful API using standard Flask routing
 """
-# import script to generate new docker image of application
-import os
 
 # import Flask microframework and associated tools
 from flask import Flask, request, jsonify
@@ -207,6 +205,5 @@ def delete_one(_id):
 # module import protection
 if __name__ == '__main__':
     # get app to serve
-    os.system("docker.sh")
     print(f'API Listening on http://{HOST}:{PORT}')
     app.run(host=HOST, port=PORT, debug=True)
