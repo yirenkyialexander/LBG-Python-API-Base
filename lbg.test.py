@@ -35,7 +35,7 @@ class MyLbgApiTestCase(unittest.TestCase):
         Create (Post) request.  Note.  API will need to be running(!)
         """
         response = requests.post(BASE_URL + '/create', json = {'name': 'Tool', 'description': 'Hammer', 'price': 10.5})
-        self.assertEqual(response.status_code, HTTP_200_OK)
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
     @unittest.skip("Skip this test for now using this decorator...")
     def test_create_post_request_type(self):
@@ -53,9 +53,9 @@ class MyLbgApiTestCase(unittest.TestCase):
         Test to see if RESTful API returns an object with the correct fields for a simple
         Read (GET) request.  Note.  API will need to be running(!)
         """
-        item = requests.post(BASE_URL + '/create', json = {'name': 'Vegetable', 'description': 'Leek', 'price': .7})
-        response = requests.get(BASE_URL + '/read/3')
-        self.assertEqual(response.json(), {"_id":3, 'name': 'Vegetable', 'description': 'Leek', 'price': .7})
+        item = requests.post(BASE_URL + '/create', json = {'name': 'Vegetable', 'description': 'Leek', 'price': 0.7})
+        response = requests.get(BASE_URL + '/read/2')
+        self.assertEqual(response.json(), {"_id":2, 'name': 'Vegetable', 'description': 'Leek', 'price': 0.7})
     
     @classmethod
     def tearDownClass(cls):
