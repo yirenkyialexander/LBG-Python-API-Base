@@ -60,6 +60,7 @@ class MyLbgApiTestCase(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         requests.delete(BASE_URL + '/delete/1')
+        requests.delete(BASE_URL + '/delete/2')
 
 # module import protection
 
